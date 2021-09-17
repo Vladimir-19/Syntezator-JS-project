@@ -111,12 +111,16 @@ import "./styles/index.scss";
 
 // Tone.Synth is a basic synthesizer with a single oscillator
 const synth = new Tone.Synth().toDestination();
-// Set the tone to sine
-synth.oscillator.type = "sine";
+// Set the tone to sine //square, triangle, or sawtooth
+synth.oscillator.type = "sine"; 
 // connect it to the master output (your speakers)
-synth.toMaster();
+// synth.toMaster();
+// const synth = new Tone.Player("https://tonejs.github.io/audio/berklee/gong_1.mp3").toDestination();
+const octaver = new Tone.PolySynth().toDestination()
 
 const piano = document.getElementById("piano");
+
+const now = Tone.now()
 
 document.addEventListener("mousedown", e => {
   // fires off a note continously until trigger is released
@@ -132,29 +136,33 @@ document.addEventListener("mouseup", e => {
 document.addEventListener("keydown", e => {
   // e object has the key property to tell which key was pressed
   switch (e.key) {
-    case "d":
+    case "z":
+      return synth.triggerAttack("C3");
+    case "m":
+      return synth.triggerAttack("B3")
+    case "q":
       return synth.triggerAttack("C4");
-    case "r":
+    case "2":
       return synth.triggerAttack("C#4");
-    case "f":
+    case "w":
       return synth.triggerAttack("D4");
-    case "t":
+    case "3":
       return synth.triggerAttack("D#4");
-    case "g":
+    case "e":
       return synth.triggerAttack("E4");
-    case "h":
+    case "r":
       return synth.triggerAttack("F4");
-    case "u":
+    case "5":
       return synth.triggerAttack("F#4");
-    case "j":
+    case "t":
       return synth.triggerAttack("G4");
-    case "i":
+    case "6":
       return synth.triggerAttack("G#4");
-    case "k":
+    case "y":
       return synth.triggerAttack("A4");
-    case "o":
+    case "7":
       return synth.triggerAttack("A#4");
-    case "l":
+    case "u":
       return synth.triggerAttack("B4");
     default:
       return;
@@ -162,19 +170,36 @@ document.addEventListener("keydown", e => {
 });
 // when the key is released, audio is released as well
 document.addEventListener("keyup", e => {
-  switch (e.key) {
-    case "d":
+  switch (e.key) { 
+    case "m":
+    case "q":
+    case "2":
+    case "w":
+    case "3":
+    case "e":
     case "r":
-    case "f":
+    case "5":
     case "t":
-    case "g":
-    case "h":
+    case "6":
+    case "y":
+    case "7":
     case "u":
-    case "j":
-    case "i":
-    case "k":
-    case "o":
-    case "l":
       synth.triggerRelease();
   }
 });
+
+// const notes = ["C", "D", "E", "F", "G", "A", "B"]
+// const html = ""
+
+// for (var octave = 0; octave < 2; octave++) {
+//   for (var i = 0; i < notes.length; i++) {
+//     const hasSharp = true;
+//     const note = notes[i]
+    
+//     if (note == "E" || note == "B") 
+//       hasSharp = false;
+
+//     html += `<div class='key'>`
+    
+//   }
+// }
