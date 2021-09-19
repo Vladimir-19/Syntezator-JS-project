@@ -4,79 +4,62 @@
   box-shadow: 3px 3px 5px 5px $color, 1px 0px 1px $color;
 }
 
-$main-color: #000000;
-$accent-color: darken($main-color, 20%);
-$background-color: lighten($main-color, 40%);
 
-// LAYOUT
 
-body {
-  background-color: $background-color;
-  color: $main-color;
-  display: flex;
-  flex-direction: column;
-}
-
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// COMPONENTS
-.card {
-  background: white;
-  height: 50vh;
-  width: 50vw;
-  border-radius: 15px;
-  margin-top: 15px;
-  @include basic-box-shadow($accent-color);
-}
-
-.rando {
-  display: flex;
-  flex-direction: column;
-
-  btn {
-    height: 2em;
-    background: magenta;
-    color: white;
-    width: 10vmax;
-    text-align: center;
-    padding-top: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 20px;
-    line-height: 1.5;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: blueviolet;
-    font-weight: 500;
-    font-size: 5vmin;
-  }
-}
-
-.image-card {
-  background-position: center;
-}
-
-// TYPOGRAPHY
-h2 {
-  font-size: 3rem;
-}
 
 ////////////// START //////////
  body {
+    background-color: rgb(139, 139, 139);
      font-family: 'Roboto', sans-serif;
      display: flex;
+     flex-direction: column; 
      justify-content: center;
      align-items: center;
      min-height: 100vh;
 }
+/////////////// NAV BAR 
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 4px;
+  border: 1px solid black;
+}
+.logo {
+  padding: 10px;
+};
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+};
+.linkedin {
+  font-style: normal;
+  color: black;
+}
+
+////////////////// KEYBOARD
+.block {
+  width: 910px;
+  height: 200%;
+  border: 1px solid black;
+  background: inherit;
+}
+
+#piano {
+    margin-right: 22px;
+    margin-left: -10px;
+}
+
  ul {
      list-style: none;
      display: flex;
@@ -118,9 +101,3 @@ h2 {
      color: white;
 }
 
-.block {
-  width: 900px;
-  height: 200%;
-  border: 1px solid black;
-  background: rgb(41, 41, 49);
-}

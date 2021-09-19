@@ -137,33 +137,54 @@ document.addEventListener("keydown", e => {
   // e object has the key property to tell which key was pressed
   switch (e.key) {
     case "z":
-      return synth.triggerAttack("C3");
-    case "m":
-      return synth.triggerAttack("B3")
-    case "q":
       return synth.triggerAttack("C4");
-    case "2":
+    case "s":
       return synth.triggerAttack("C#4");
-    case "w":
+    case "x":
       return synth.triggerAttack("D4");
-    case "3":
+    case "d":
       return synth.triggerAttack("D#4");
-    case "e":
+    case "c":
       return synth.triggerAttack("E4");
-    case "r":
+    case "v":
       return synth.triggerAttack("F4");
-    case "5":
+    case "g":
       return synth.triggerAttack("F#4");
-    case "t":
+    case "b":
       return synth.triggerAttack("G4");
-    case "6":
+    case "h":
       return synth.triggerAttack("G#4");
-    case "y":
+    case "n":
       return synth.triggerAttack("A4");
-    case "7":
+    case "j":
       return synth.triggerAttack("A#4");
+    case "m":
+      return synth.triggerAttack("B4")
+      
+    case "q":
+      return synth.triggerAttack("C5");
+    case "2":
+      return synth.triggerAttack("C#5");
+    case "w":
+      return synth.triggerAttack("D5");
+    case "3":
+      return synth.triggerAttack("D#5");
+    case "e":
+      return synth.triggerAttack("E5");
+    case "r":
+      return synth.triggerAttack("F5");
+    case "5":
+      return synth.triggerAttack("F#5");
+    case "t":
+      return synth.triggerAttack("G5");
+    case "6":
+      return synth.triggerAttack("G#5");
+    case "y":
+      return synth.triggerAttack("A5");
+    case "7":
+      return synth.triggerAttack("A#5");
     case "u":
-      return synth.triggerAttack("B4");
+      return synth.triggerAttack("B5");
     default:
       return;
   }
@@ -171,6 +192,17 @@ document.addEventListener("keydown", e => {
 // when the key is released, audio is released as well
 document.addEventListener("keyup", e => {
   switch (e.key) { 
+    case "z":
+    case "s":
+    case "x":
+    case "d":
+    case "c":
+    case "v":
+    case "g":
+    case "b":
+    case "h":
+    case "n":
+    case "j":
     case "m":
     case "q":
     case "2":
