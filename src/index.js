@@ -1,4 +1,9 @@
 import "./styles/index.scss";
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
+// import { faCamera } from '@fortawesome/free-solid-svg-icons'
+import { config } from '@fortawesome/fontawesome-svg-core'
+
+config.autoA11y = true
 // import "./images/yoda-stitch.jpg";
 // import canvasExample from "./scripts/canvas";
 // import Square from "./scripts/square";
